@@ -154,8 +154,8 @@ AoK <- function(x) {
 setwd("C:/Users/Dennis_M/Desktop/h2rAggregationSOM20/h2rAggregationSOM20")
 
 #import data set with blanks being NA's
-df_baidoa<-read.csv("inputs/SOM1901_H2R_Baidoa_December_Clean_Data.csv", stringsAsFactors = FALSE, dec=".", sep=",", na.strings=c("NA",""," "))              
-df_mogadishu<-read.csv("inputs/SOM1901_H2R_Mogadishu_December_Clean_Data.csv", stringsAsFactors = FALSE, dec=".", sep=",", na.strings=c("NA",""," "))        
+df_baidoa<-read.csv("inputs/SOM1901_H2R_Mogadishu_January_Clean_Data.csv", stringsAsFactors = FALSE, dec=".", sep=",", na.strings=c("NA",""," "))              
+df_mogadishu<-read.csv("inputs/SOM1901_H2R_Baidoa_January_Clean_Data.csv", stringsAsFactors = FALSE, dec=".", sep=",", na.strings=c("NA",""," "))        
 #df<-read.csv("inputs/h2r_Oct_2020_consolidated_mog_baidoa_clean.csv", stringsAsFactors = FALSE, dec=".", sep=",", na.strings=c("NA",""," "))              
 
 #see if columns are identical
@@ -358,7 +358,7 @@ settlement_data <- settlement_data %>%
 
 #date to label export
 today <- Sys.Date()
-agg_date<-today %m+% months(-2)
+agg_date<-today %m+% months(-1)
 agg_date<-format(agg_date, format="%Y%m")
 
 write.csv(settlement_data, file = paste0("outputs/SOM1901_H2R__clean_data_",agg_date,"01.csv"), na = "", row.names = FALSE)
@@ -472,7 +472,7 @@ names(grid_level) <- gsub("\\.", "_", names(grid_level))
 #########EXPORT#####################################################################################################################################################################################
 #date to label export
 today <- Sys.Date()
-agg_month<-today %m+% months(-2)
+agg_month<-today %m+% months(-1)
 agg_month<-format(agg_month, format="%b_%Y")
 
 write.csv(grid_level, paste0("outputs/SOM1901_H2R_hex_400km_", agg_month,".csv"), row.names=FALSE)
