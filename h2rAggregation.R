@@ -154,8 +154,8 @@ AoK <- function(x) {
 setwd("C:/Users/Dennis_M/Desktop/h2rAggregationSOM20/h2rAggregationSOM20")
 
 #import data set with blanks being NA's
-df_baidoa<-read.csv("inputs/SOM1901_H2R_Mogadishu_January_Clean_Data.csv", stringsAsFactors = FALSE, dec=".", sep=",", na.strings=c("NA",""," "))              
-df_mogadishu<-read.csv("inputs/SOM1901_H2R_Baidoa_January_Clean_Data.csv", stringsAsFactors = FALSE, dec=".", sep=",", na.strings=c("NA",""," "))        
+df_baidoa<-read.csv("inputs/SOM1901_H2R_Mogadishu_February_Clean_Data.csv", stringsAsFactors = FALSE, dec=".", sep=",", na.strings=c("NA",""," "))              
+df_mogadishu<-read.csv("inputs/SOM1901_H2R_Baidoa_February_Clean_Data.csv", stringsAsFactors = FALSE, dec=".", sep=",", na.strings=c("NA",""," "))        
 #df<-read.csv("inputs/h2r_Oct_2020_consolidated_mog_baidoa_clean.csv", stringsAsFactors = FALSE, dec=".", sep=",", na.strings=c("NA",""," "))              
 
 #see if columns are identical
@@ -296,7 +296,7 @@ not_needed_columns <- c( "start", "end","today", "deviceid","available_health_se
                          "info_reg", "district_info", "gender_ki", "sources_covid_informaiton", "other_covid_info_sources", "settlement_info_001","X_validation_status", 
                          "enum_code", "declined_consent", "h2r_notice", "when_left_prev", "how_long_stay", "still_inhabited", "not_ki_req", "age_ki", "left_behind_y_n", 
                          "market_settlement_close", "people_malnourished", "child_services", "other_covid_measures", "planning2visit_settelment", "new_ki_referral",
-                         select_other, select_note
+                         "select_other", "select_note"
 )
 
 #get select single through subset (minus multiple and not needed and essential_col)
