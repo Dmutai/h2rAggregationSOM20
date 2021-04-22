@@ -135,13 +135,14 @@ AoK <- function(x) {
   }
   else {                  
     if (length(ux)!=0){                                                                            #otherwise and if not only NA or SL -> return the mode
-      ux[which.max(tabulate(match(x, ux)))]                                                     
+      
+      as.character(ux[which.max(tabulate(match(x, ux)))] )
     }
     else {if ("SL" %in%  x){                                                                       #otherwise if containing SL -> SL , if not -> NA
       return("SL")
     }
       else{
-        return(NA)
+        return(as.character(NA))
       }
     }
     # }
@@ -151,11 +152,12 @@ AoK <- function(x) {
 ########IMPORTS#####################################################################################################################################################################################
 
 #set working directory
-setwd("C:/Users/Dennis_M/Desktop/h2rAggregationSOM20/h2rAggregationSOM20")
+# setwd("C:/Users/Dennis_M/Desktop/h2rAggregationSOM20/h2rAggregationSOM20")
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 #import data set with blanks being NA's
-df_baidoa<-read.csv("inputs/SOM1901_H2R_Mogadishu_February_Clean_Data.csv", stringsAsFactors = FALSE, dec=".", sep=",", na.strings=c("NA",""," "))              
-df_mogadishu<-read.csv("inputs/SOM1901_H2R_Baidoa_February_Clean_Data.csv", stringsAsFactors = FALSE, dec=".", sep=",", na.strings=c("NA",""," "))        
+df_baidoa<-read.csv("inputs/SOM1901_H2R_Baidoa_March_April_Clean_Data.csv", stringsAsFactors = FALSE, dec=".", sep=",", na.strings=c("NA",""," "))              
+df_mogadishu<-read.csv("inputs/SOM1901_H2R_Mogadishu_March_April_Clean_Data.csv", stringsAsFactors = FALSE, dec=".", sep=",", na.strings=c("NA",""," "))        
 #df<-read.csv("inputs/h2r_Oct_2020_consolidated_mog_baidoa_clean.csv", stringsAsFactors = FALSE, dec=".", sep=",", na.strings=c("NA",""," "))              
 
 #see if columns are identical
