@@ -156,8 +156,8 @@ AoK <- function(x) {
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 #import data set with blanks being NA's
-df_baidoa<-read.csv("inputs/SOM1901_H2R_Baidoa_March_April_Clean_Data.csv", stringsAsFactors = FALSE, dec=".", sep=",", na.strings=c("NA",""," "))              
-df_mogadishu<-read.csv("inputs/SOM1901_H2R_Mogadishu_March_April_Clean_Data.csv", stringsAsFactors = FALSE, dec=".", sep=",", na.strings=c("NA",""," "))        
+df_baidoa<-read.csv("inputs/SOM1901_H2R__Baidoa_May_Clean_Data.csv", stringsAsFactors = FALSE, dec=".", sep=",", na.strings=c("NA",""," "))              
+df_mogadishu<-read.csv("inputs/SOM1901_H2R__Mogadishu_May_Clean_Data.csv", stringsAsFactors = FALSE, dec=".", sep=",", na.strings=c("NA",""," "))        
 #df<-read.csv("inputs/h2r_Oct_2020_consolidated_mog_baidoa_clean.csv", stringsAsFactors = FALSE, dec=".", sep=",", na.strings=c("NA",""," "))              
 
 #see if columns are identical
